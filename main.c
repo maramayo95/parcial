@@ -26,40 +26,23 @@ int main()
     // }
 
     // EJERCICIO 2
-Mano miMano;
-inicializar(&miMano);
+    ColaCartas mano;
+    inicializarCola(&mano);
 
-Carta carta1;
-setPalo(&carta1, 'P');
-setValor(&carta1, 10);
+    // Agregar 5 cartas a la mano usando getters y setters
+    for (int i = 0; i < 5; i++) {
+        Carta carta;
+        establecerPalo(&carta, 'D');
+        establecerValor(&carta, i + 1);
+        agregarCarta(&mano, carta);
+    }
 
-Carta carta2;
-setPalo(&carta2, 'P');
-setValor(&carta2, 2);
+    if (esColor(&mano)) {
+        printf("La mano representa un Color en el juego de Poker.\n");
+    } else {
+        printf("La mano no representa un Color en el juego de Poker.\n");
+    }
 
-Carta carta3;
-setPalo(&carta3, 'P');
-setValor(&carta3, 1);
-
-Carta carta4;
-setPalo(&carta4, 'P');
-setValor(&carta4, 4);
-
-Carta carta5;
-setPalo(&carta5, 'P');
-setValor(&carta5, 8);
-
-encolarCarta(&miMano, carta1);
-encolarCarta(&miMano, carta2);
-encolarCarta(&miMano, carta3);
-encolarCarta(&miMano, carta4);
-encolarCarta(&miMano, carta5);
-
-if (esColor(&miMano)) {
-    printf("La mano representa un Color en el juego de Poker.\n");
-} else {
-    printf("La mano no representa un Color.\n");
-}
 
 
     // Cola *miCola = crearCola();
