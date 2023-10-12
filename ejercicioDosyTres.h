@@ -50,18 +50,18 @@ void establecerValor(Carta *carta, int nuevoValor) {
 
 int esColor(ColaCartas *mano) {
     if (mano->fin < mano->frente) {
-        return 0; // La mano está vacía, no es un color
+        return 0; 
     }
 
     char palo = obtenerPalo(mano->cartas[mano->frente]);
 
     for (int i = mano->frente + 1; i <= mano->fin; i++) {
         if (obtenerPalo(mano->cartas[i]) != palo) {
-            return 0; // Se encontró una carta con un palo diferente
+            return 0; 
         }
     }
 
-    return 1; // Todas las cartas tienen el mismo palo, es un color
+    return 1; 
 }
 
 
